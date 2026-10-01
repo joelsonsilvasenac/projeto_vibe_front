@@ -1,0 +1,16 @@
+const express = require('express');
+const cors = require('cors');
+const produtoRoutes = require('./routes/produtoRoutes');
+const pessoaRoutes = require('./routes/pessoaRoutes');
+const pedidoRoutes = require('./routes/pedidoRoutes');
+
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+
+app.use('/produtos', produtoRoutes);
+app.use('/pessoas', pessoaRoutes);
+app.use('/pedidos', pedidoRoutes);
+
+module.exports = app;
